@@ -244,3 +244,8 @@ def index():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8000)
+   
+    @dp.message_handler()
+async def echo_all(message: types.Message):
+    print(f"Получено сообщение: {message.text}")
+    await message.reply("✅ Бот работает!")
